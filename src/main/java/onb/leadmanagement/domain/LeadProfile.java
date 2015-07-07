@@ -41,4 +41,8 @@ public class LeadProfile {
 	public List<Project> getProjects(){
 		return new ArrayList<Project>(projects);
 	}
+	public Contact getContact(){
+		return contact;
+	}
+	
 }
