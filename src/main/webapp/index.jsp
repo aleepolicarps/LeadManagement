@@ -68,12 +68,12 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>#</th>
-								<th>Name</th>
-								<th>Service Availed</th>
-								<th>Contacted Date</th>
-								<th>Contact Person</th>
-								<th>Contact Detail</th>
+								<th><a class="btn btn-default" href="#" role="button">#</a></th>
+								<th><a class="btn btn-default" href="#" role="button">Name</a></th>
+								<th><a class="btn btn-default" href="#" role="button">Service Availed</a></th>
+								<th><a class="btn btn-default" href="#" role="button">Contacted Date</a></th>
+								<th><a class="btn btn-default" href="#" role="button">Contact Person</a></th>
+								<th><a class="btn btn-default" href="#" role="button">Contact Detail</a></th>
 							</tr>
 						</thead>
 						<tr>
