@@ -7,6 +7,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap/bootstrap.min.css" />">
 		<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/customcss/createprofile.css" />">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/customcss/navbar.css" />">
 		<title>Create Lead Profile</title>
 	</head>
 	
@@ -53,14 +54,19 @@
   					<label><input type="radio" name="optradio" value="individual">Individual</label>
 				  </div>
 				    
-				  <button type="submit" class="btn btn-primary">Submit</button>
+				  <nav>
+				 	 <ul class="pager">
+				    	<li><a href="#">Previous</a></li>
+				    	<li><a href="#">Next</a></li>
+				  	</ul>
+				  </nav>
 				</form>
 				</fieldset>
 				
 			</div>
 		</div>
-		<script src="<c:url value="/resources/js/jquery-1.11.3.min.js"/>"></script>
-		<script	src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
+		<script src="<c:url value="/resources/js/jquery/jquery-1.11.3.min.js"/>"></script>
+		<script	src="<c:url value="/resources/js/boostrap/bootstrap.min.js"/>"></script>
 		
 	</body>
 </html>
