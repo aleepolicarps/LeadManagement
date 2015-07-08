@@ -9,7 +9,6 @@ import static org.apache.commons.lang.Validate.*;
 public class CompanyLeadProfile extends SalesLeadProfile {
 	
 	@OneToOne
-	@Column(nullable = false)
 	@JoinColumn(name="personId")
 	private Person contactPerson;
 	

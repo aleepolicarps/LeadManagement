@@ -9,6 +9,7 @@ import javax.persistence.Table;
 
 
 @Entity
+@Table(name="ConsultationProject")
 public class ConsultationProject extends Project {
 
 	private String technology;

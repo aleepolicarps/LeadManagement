@@ -11,7 +11,7 @@ import static org.apache.commons.lang.Validate.*;
 public class Project {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	@Column(name="projectId")
 	private Long id;
 	
