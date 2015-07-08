@@ -1,0 +1,15 @@
+.form {
+	width:300px;
+	margin: 0 auto;
+}
+
+.clear-form{
+	clear:both;
+}
+
+.center_div{
+    margin: 0 auto;
+    margin-top: 7%;
+    width:30%; /* value of your choice which suits your alignment */
+    
+}
