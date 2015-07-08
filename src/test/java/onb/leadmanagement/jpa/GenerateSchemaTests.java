@@ -1,5 +1,5 @@
 package onb.leadmanagement.jpa;
-
+import static org.junit.Assert.fail;
 import onb.leadmanagement.domain.SalesLeadProfile;
 
 import org.junit.Test;
@@ -17,6 +17,6 @@ public class GenerateSchemaTests extends AbstractJpaTests {
 	public void testSchema(){	
 		entityManager.getMetamodel().entity(SalesLeadProfile.class);
 	}
-	
+}	
 
-}
+
