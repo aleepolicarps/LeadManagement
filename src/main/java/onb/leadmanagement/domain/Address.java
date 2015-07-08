@@ -1,7 +1,10 @@
 package onb.leadmanagement.domain;
 
+import javax.persistence.Embeddable;
+import static org.apache.commons.lang.Validate.*;
 
 
+@Embeddable
 public class Address {
 	private String unitNumber;
 	private String buildingNumber;
@@ -12,12 +15,20 @@ public class Address {
 	private String country;
 	
 	
-	public Address(){
+	protected Address(){
 		
 	}
 	
 	public Address(String unitNumber, String buildingNumber, String streetName,
-			String barangay, String postalCode, String city, String country) {		
+			String barangay, String postalCode, String city, String country) {	
+		notNull(unitNumber);
+		notNull(buildingNumber);
+		notNull(streetName);
+		notNull(barangay);
+		notNull(postalCode);
+		notNull(city);
+		notNull(country);
+		
 		this.unitNumber = unitNumber;
 		this.buildingNumber = buildingNumber;
 		this.streetName = streetName;
