@@ -13,21 +13,16 @@
 	<body>
 		<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
 			<div class="container-fluid">
-				
-				<ul class="nav navbar-nav navbar-right">
-        			<li class="dropdown">
-         				<a href="#" class="navbar-brand dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Orange and Bronze <span class="caret"></span></a>
-         				<ul class="dropdown-menu">
-				            <li><a href="#">Add New Project</a></li>
-				            <li><a href="#">Add Contact Person</a></li>
-				            <li role="separator" class="divider"></li>
-				            <li><a href="#">Edit Profile</a></li>
-          				</ul>
-       				 </li>
-     			 </ul>
 				<div class="navbar-header">
 					<a class="navbar-brand">Lead Management</a>
 				</div>
+				
+				<form class="navbar-form navbar-right" role="search">
+				  <div class="form-group">
+				    <input type="text" class="form-control" placeholder="Search Profile">
+				  </div>
+				  <button type="submit" class="btn btn-default">Find Profile</button>
+				</form>
 			</div>
 		</nav>	
 		
@@ -46,10 +41,27 @@
 		</div>
 		
 		<div id="container">
-			<div id="profile-name" class=".col-md-3">
+			<div id="profile-name">
 				<h3>Orange and Bronze</h3>
 				<h5>Date Created: 1/1/15</h5>
 			</div>
+			<div id="tablist">
+				<ul class="nav nav-tabs" style="border:0;">
+	 				<li role="presentation" class="active"><a href="#">Details</a></li>
+	 				<li role="presentation"><a href="#">Projects</a></li>
+	 				<li role="presentation"><a href="#">Logs</a></li>
+	  				<li class="dropdown">
+       					<a href="#" data-toggle="dropdown" class="dropdown-toggle">Menu<b class="caret"></b></a>
+        				<ul class="dropdown-menu">
+            				<li><a href="#">Add Contact Person</a></li>
+				            <li><a href="#">Create New Project</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">Edit Profile</a></li>
+        				</ul>
+   					</li>
+				</ul>
+			</div>
+			
 		</div>
 		
 		
