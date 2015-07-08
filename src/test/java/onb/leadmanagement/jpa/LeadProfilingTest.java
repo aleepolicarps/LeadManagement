@@ -1,5 +1,7 @@
 package onb.leadmanagement.jpa;
 
+import static org.junit.Assert.*;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
@@ -15,17 +17,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
-import org.springframework.transaction.annotation.Transactional;
 
-@ContextConfiguration
-@RunWith(SpringJUnit4ClassRunner.class)
-@Transactional
 @DirtiesContext(classMode=ClassMode.AFTER_EACH_TEST_METHOD)
 @TransactionConfiguration(defaultRollback=true)
-public class GenerateSchemaTests {
+public abstract class LeadProfilingTest{
 
 	@Autowired
 	protected ApplicationContext context;
@@ -38,6 +34,7 @@ public class GenerateSchemaTests {
 	public void setUp(){
 		entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();
+		setUpLeads();
 		
 	}
 	@After
@@ -51,6 +48,8 @@ public class GenerateSchemaTests {
 	public void testSchema(){	
 		entityManager.getMetamodel().entity(SalesLeadProfile.class);
 	}
+	
+	protected abstract void setUpLeads();
 	
 
 }

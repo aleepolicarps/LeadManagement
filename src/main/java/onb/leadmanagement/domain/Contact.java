@@ -12,6 +12,7 @@ public class Contact {
 	
 	@Id
 	@Column(name = "contactId")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	private String mobileNumber;
