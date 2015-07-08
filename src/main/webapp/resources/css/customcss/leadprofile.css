@@ -1,0 +1,23 @@
+#sidebar-left{
+	height:100%;
+	padding:0;
+	
+	background-color: #e0e0e0;
+}
+
+.side-group{
+	padding-top: 30%;
+}
+
+#profile-name{
+	height: 75px;
+	position:relative;
+	z-index: -1;
+}
+
+#container{
+	position:relative;
+	margin-left:16.7%;
+	height:100%;
+	width: 100%;
+}
