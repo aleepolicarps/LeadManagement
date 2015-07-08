@@ -9,9 +9,9 @@
 <head>
 
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/bootstrap.min.css" />">
+	href="<c:url value="/resources/css/bootstrap/bootstrap.min.css"/>">
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/mainpage.css"/>">
+	href="<c:url value="/resources/css/customcss/mainpage.css"/>">
 
 <meta charset="utf-8">
 <title>Main Page</title>
@@ -68,12 +68,12 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th><a class="btn btn-default" href="#" role="button">#</a></th>
-								<th><a class="btn btn-default" href="#" role="button">Name</a></th>
-								<th><a class="btn btn-default" href="#" role="button">Service Availed</a></th>
-								<th><a class="btn btn-default" href="#" role="button">Contacted Date</a></th>
-								<th><a class="btn btn-default" href="#" role="button">Contact Person</a></th>
-								<th><a class="btn btn-default" href="#" role="button">Contact Detail</a></th>
+								<th>#</th>
+								<th>Name</th>
+								<th>Service Availed</th>
+								<th>Contacted Date</th>
+								<th>Contact Person</th>
+								<th>Contact Detail</th>
 							</tr>
 						</thead>
 						<tr>
@@ -103,10 +103,9 @@
 
 
 
-	<%-- 	<c:url value="/showMessage.html" var="messageUrl" />
-		<a href="${messageUrl}">Click to enter</a> --%>
 
-	<%-- 	<script src="<c:url value="/resources/js/jquery-1.11.3.min.js"/>"></script>
+
+	<script src="<c:url value="/resources/js/jquery-1.11.3.min.js"/>"></script>
 			<script
 				src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> --%>
 </body>
