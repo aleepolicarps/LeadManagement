@@ -9,27 +9,5 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-	<context:component-scan base-package="libraryapp.application, libraryapp.domain.model, libraryapp.domain.service" />
-	<jdbc:embedded-database id="dataSource" type="HSQL" />
-
-    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="jpaVendorAdapter">
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
-		</property>
-		<property name="jpaProperties">
-			<props>
-				<prop key="javax.persistence.schema-generation.database.action">drop-and-create</prop>
-				<prop key="javax.persistence.schema-generation.create-source">metadata</prop>
-				<prop key="hibernate.format_sql">true</prop>
-			</props>
-		</property>
-		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="onb.leadmanagement.jpa"/>
-	</bean>
-
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<constructor-arg name="emf" ref="entityManagerFactory" />
-	</bean>
-
-	<tx:annotation-driven />
+	<context:component-scan base-package="onb.leadmanagement" />
 </beans>

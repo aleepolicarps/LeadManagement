@@ -33,12 +33,12 @@ public abstract class LeadProfilingTest{
 		entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();
 		setUpLeads();
+		entityManager.getTransaction().commit();
+		entityManager.close();
 		
 	}
 	@After
 	public void tearDown(){
-		entityManager.getTransaction().commit();
-		entityManager.close();
 	}
 	
 	protected abstract void setUpLeads();

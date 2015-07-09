@@ -1,7 +1,12 @@
 package onb.leadmanagement.jpa;
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
+import java.util.List;
+
+import javax.persistence.Query;
 
 import onb.leadmanagement.domain.Address;
 import onb.leadmanagement.domain.Channel;
@@ -24,6 +29,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration("GenerateSchemaTests-context.xml")
 public class TestData extends LeadProfilingTest{
 
+
+
+	
 	@Override
 	protected void setUpLeads() {
 		Contact contactXxx = new Contact("09051261020","1234567", 
@@ -53,8 +61,10 @@ public class TestData extends LeadProfilingTest{
 	
 	@Test
 	public void testFindByName(){
-		SalesLeadJpaRepository salesLeadRepo = new SalesLeadJpaImpl();
-		salesLeadRepo.findByName("Bank XXX");
+		String name = "Bank XXX";
+		SalesLeadJpaRepository service = context.getBean(SalesLeadJpaImpl.class);
+		SalesLeadProfile lead = service.findByName(name);
+
 	}
 
 }
