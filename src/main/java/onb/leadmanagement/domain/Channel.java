@@ -1,0 +1,6 @@
+package onb.leadmanagement.domain;
+
+public enum Channel{
+	FACEBOOK, YOUTUBE, TWITTER, MOBILE_CALL, LANDLINE_CALL, COMPANY_EMAIL, PERSONAL_EMAIL,
+	SMS,SNAIL_MAIL,NONE
+}
