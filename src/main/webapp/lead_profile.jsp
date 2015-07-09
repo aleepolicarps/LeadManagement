@@ -7,6 +7,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap/bootstrap.min.css" />">
 		<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/customcss/leadprofile.css" />">
+		<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/customcss/navbar.css" />">
 		<title>Lead Profile</title>
 	</head>
 	
@@ -65,8 +66,8 @@
 		</div>
 		
 		
-		<script src="<c:url value="/resources/js/jquery-1.11.3.min.js"/>"></script>
-		<script	src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
+		<script src="<c:url value="/resources/js/jquery/jquery-1.11.3.min.js"/>"></script>
+		<script	src="<c:url value="/resources/js/bootstrap/bootstrap.min.js"/>"></script>
 		
 	</body>
 </html>

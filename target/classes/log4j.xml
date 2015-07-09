@@ -28,15 +28,15 @@
 	<logger name="org.hibernate">
 		<level value="error" />
 	</logger>
-<!-- 	 logs the SQL statements -->
+	<!-- logs the SQL statements -->
 	<logger name="org.hibernate.SQL">
 		<level value="debug" />
 	</logger>
-<!-- 	logs the JDBC parameters -->
+	
+	<!-- logs the JDBC parameters -->
 	<logger name="org.hibernate.type.descriptor.sql">
 		<level value="trace" />
 	</logger>
-	
 	
 	<!-- Root Logger -->
 	<root>
