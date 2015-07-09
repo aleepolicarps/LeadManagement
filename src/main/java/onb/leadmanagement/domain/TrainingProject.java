@@ -11,6 +11,10 @@ public class TrainingProject extends Project {
 	private String course;
 	private int numberOfEnrollees;
 	
+	protected TrainingProject(){
+		super();
+	}
+	
 	public TrainingProject(String name, String course, int numberOfEnrollees) {
 		super(name);
 		notNull(numberOfEnrollees);

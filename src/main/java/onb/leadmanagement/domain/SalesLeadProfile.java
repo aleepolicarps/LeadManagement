@@ -7,11 +7,11 @@ import javax.persistence.*;
 import static org.apache.commons.lang.Validate.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class SalesLeadProfile {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="salesLeadId")
 	private Long id;
 	
@@ -21,11 +21,15 @@ public class SalesLeadProfile {
 	@Column(nullable = false)
 	private Channel initialChannelAccessed;
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="salesLeadId", referencedColumnName="salesLeadId")
 	private Set<Project> projects;
 	
-	@OneToOne
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="salesLeadId", referencedColumnName="salesLeadId")
+	private List<Communication> communicationLog;
+	
+	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="contactId")
 	private Contact contact;
 	
@@ -45,25 +49,32 @@ public class SalesLeadProfile {
 		this.contact = new Contact();
 		this.industry = Industry.NONE;
 		projects = new HashSet<Project>();
-		
+		communicationLog = new ArrayList<Communication>();
 		this.comments = "";
 	}
 	
 	public SalesLeadProfile(String name, Channel channelAccessed, Contact contact,
-			Industry industry, Set<Project> projects){
+			Industry industry, Set<Project> projects, List<Communication> communicationLog){
 		notEmpty(name);
 		notNull(channelAccessed);
 		notNull(contact);
 		notNull(industry);
 		notNull(projects);
+		notNull(communicationLog);
 		this.name = name;
 		this.initialChannelAccessed = channelAccessed;
 		this.contact = contact;
 		this.industry = industry;
 		this.projects  = new HashSet<Project>(projects);
+		this.communicationLog = new ArrayList<Communication>(communicationLog);
 		this.comments = "";
 	}
-	
+	public void addToLog(Communication communication){
+		communicationLog.add(communication);
+	}
+	public List<Communication> getCommunicationLog(){
+		return new ArrayList<Communication>(communicationLog);
+	}	
 	public String getId(){
 		return id.toString();
 	}

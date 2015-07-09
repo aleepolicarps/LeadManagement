@@ -1,7 +1,5 @@
 package onb.leadmanagement.jpa;
 
-import static org.junit.Assert.*;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
@@ -41,12 +39,6 @@ public abstract class LeadProfilingTest{
 	public void tearDown(){
 		entityManager.getTransaction().commit();
 		entityManager.close();
-	}
-	
-	
-	@Test
-	public void testSchema(){	
-		entityManager.getMetamodel().entity(SalesLeadProfile.class);
 	}
 	
 	protected abstract void setUpLeads();
