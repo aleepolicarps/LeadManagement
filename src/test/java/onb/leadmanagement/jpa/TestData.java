@@ -1,11 +1,7 @@
 package onb.leadmanagement.jpa;
-import static org.junit.Assert.assertEquals;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
-
-import javax.persistence.Query;
 
 import onb.leadmanagement.domain.Address;
 import onb.leadmanagement.domain.Channel;
@@ -17,6 +13,7 @@ import onb.leadmanagement.domain.Industry;
 import onb.leadmanagement.domain.Person;
 import onb.leadmanagement.domain.Project;
 import onb.leadmanagement.domain.SalesLeadProfile;
+import onb.leadmanagement.jpainterfaces.SalesLeadJpaRepository;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -56,6 +53,8 @@ public class TestData extends LeadProfilingTest{
 	
 	@Test
 	public void testFindByName(){
+		SalesLeadJpaRepository salesLeadRepo = new SalesLeadJpaImpl();
+		salesLeadRepo.findByName("Bank XXX");
 	}
 
 }

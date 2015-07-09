@@ -14,7 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 public class GenerateSchemaTests extends AbstractJpaTests {
 	
 	@Test
-	public void testSchema(){	
+	public void testSchema(){
+		if(entityManager == null)
+			fail("NULL!");
 		entityManager.getMetamodel().entity(SalesLeadProfile.class);
 	}
 }	
