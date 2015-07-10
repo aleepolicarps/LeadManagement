@@ -14,6 +14,7 @@ import onb.leadmanagement.domain.Person;
 import onb.leadmanagement.domain.Project;
 import onb.leadmanagement.domain.SalesLeadProfile;
 import onb.leadmanagement.jpainterfaces.SalesLeadJpaRepository;
+import onb.leadmanagement.service.CreateProfileService;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -53,8 +54,14 @@ public class TestData extends LeadProfilingTest{
 	
 	@Test
 	public void testFindByName(){
-		SalesLeadJpaRepository salesLeadRepo = new SalesLeadJpaImpl();
+		SalesLeadJpaRepository salesLeadRepo = context.getBean(SalesLeadJpaRepository.class);
 		salesLeadRepo.findByName("Bank XXX");
+	}
+	
+	@Test
+	public void testService(){
+		CreateProfileService cps = new CreateProfileService();
+		cps.createProfile();
 	}
 
 }

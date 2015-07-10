@@ -15,7 +15,6 @@ import onb.leadmanagement.jpainterfaces.SalesLeadJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Repository;
-import org.springframework.test.context.ContextConfiguration;
 
 @Repository
 public class SalesLeadJpaImpl implements SalesLeadJpaRepository{
@@ -42,7 +41,10 @@ public class SalesLeadJpaImpl implements SalesLeadJpaRepository{
 	@Override
 	public SalesLeadProfile findByName(String name) {
 		if(context == null)
-			System.out.println("asfasfa");
+			System.out.println("NULL!!!!");
+		Query query = entityManager.createQuery("SELECT p from salesleadprofile p where "
+				+ "p.name= :name");
+		query.setParameter("name",name);
 		return null;
 	}
 
