@@ -21,7 +21,7 @@ public class Person {
 	@Column(nullable=false)
 	private String lastName;
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="contactId")
 	private Contact contact;
 	

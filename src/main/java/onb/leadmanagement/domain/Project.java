@@ -7,11 +7,11 @@ import javax.persistence.*;
 import static org.apache.commons.lang.Validate.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Project {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="projectId")
 	private Long id;
 	
@@ -21,29 +21,25 @@ public class Project {
 	@Column(nullable=false)
 	private Status status;
 	
-	@OneToMany
-	@JoinColumn(name="projectId", referencedColumnName="projectId")
-	private List<Communication> communicationLog;
-	
 	private String detail;
+	
+	protected Project(){
+		
+	}
 	
 	public Project(String name){
 		notEmpty(name);
 		this.name = name;
 		this.status = Status.for_evaluation;
-		this.communicationLog = new ArrayList<Communication>();
 		this.detail = "";
 	}
 	
-	public Project(String name, Status status,
-			ArrayList<Communication> communicationLog,String detail) {
+	public Project(String name, Status status,String detail) {
 		notNull(name);
 		notNull(status);
-		notNull(communicationLog);
 		notNull(detail);
 		this.name = name;
 		this.status = status;
-		this.communicationLog.addAll(communicationLog);
 		this.detail = detail;
 	}
 	public String getName(){
@@ -60,12 +56,6 @@ public class Project {
 	}
 	public void setDetails(String details) {
 		this.detail = details;
-	}
-	public void addToLog(Communication communication){
-		communicationLog.add(communication);
-	}
-	public List<Communication> getCommunicationLog(){
-		return new ArrayList<Communication>(communicationLog);
 	}
 
 	@Override

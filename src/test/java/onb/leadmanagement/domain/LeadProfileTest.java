@@ -2,6 +2,7 @@ package onb.leadmanagement.domain;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
 
@@ -21,7 +22,7 @@ public class LeadProfileTest {
 			
 		SalesLeadProfile leadXxx = new CompanyLeadProfile(
 				"Bank XXX", Channel.LANDLINE_CALL, contactXxx, Industry.BANKING_AND_FINANCE,
-				new HashSet<Project>(), personXxx);
+				new HashSet<Project>(),new ArrayList<Communication>(), personXxx);
 		
 		assertEquals(contactXxx.toString(), leadXxx.getContact().toString());
 		
@@ -31,8 +32,8 @@ public class LeadProfileTest {
 				"02:00", 0, null, "Initial contact",
 				"tl;dr", Channel.LANDLINE_CALL);
 	
-		consulationProjectXxx.addToLog(comm1);
-		assertEquals(1, consulationProjectXxx.getCommunicationLog().size());
+		leadXxx.addToLog(comm1);
+		assertEquals(1, leadXxx.getCommunicationLog().size());
 
 		leadXxx.addProject(consulationProjectXxx);
 		assertEquals(1, leadXxx.getProjects().size());
