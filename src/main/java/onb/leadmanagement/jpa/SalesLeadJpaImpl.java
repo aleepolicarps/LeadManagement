@@ -1,18 +1,18 @@
 package onb.leadmanagement.jpa;
 
 import java.util.Collection;
+import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Repository;
 
-import onb.leadmanagement.domain.ExpenditureType;
 import onb.leadmanagement.domain.Industry;
 import onb.leadmanagement.domain.SalesLeadProfile;
 import onb.leadmanagement.dto.SalesLeadDTO;
@@ -22,48 +22,45 @@ import onb.leadmanagement.jpainterfaces.SalesLeadJpaRepository;
 @Repository
 public class SalesLeadJpaImpl implements SalesLeadJpaRepository{
 	
-	@Autowired
-	ApplicationContext context;
-	
 	@PersistenceUnit
-	EntityManagerFactory entityManagerFactory;
+	private EntityManagerFactory entityManagerFactory;
+	private EntityManager entityManager;
 	
+	@PostConstruct
+	public void setUp(){
+		entityManager = entityManagerFactory.createEntityManager();
+		entityManager.getTransaction().begin();
+	}
 	
-	EntityManager entityManager;
+	@PreDestroy
+	public void tearDown(){
+		entityManager.close();
+
+	}
 
 	@Override
 	public void createProfile(SalesLeadDTO salesLeadDto) {
-		
+		//TODO define DTO
 	}
 
 	@Override
 	public SalesLeadProfile findByName(String name) {
-		
-		entityManager = entityManagerFactory.createEntityManager();
-		entityManager.getTransaction().begin();
-		
-		Query query = entityManager.createNativeQuery("SELECT count(*) from contact");
-
-		System.out.println(query.getSingleResult());		
-		if(entityManager.isOpen()){
-			entityManager.close();
-		}
-		
-		
-		return null;
+		Query query = entityManager.createQuery(
+				"SELECT p FROM SalesLeadProfile p where UPPER(p.name) = :name");
+		query.setParameter("name", name.toUpperCase());	
+		SalesLeadProfile lead = (SalesLeadProfile) query.getSingleResult();
+		return lead;
 	}
 
-	@Override
-	public Collection<SalesLeadProfile> findByExpenditure(
-			ExpenditureType expenditure) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	@SuppressWarnings("unchecked")
 	@Override
 	public Collection<SalesLeadProfile> findByIndustry(Industry industry) {
-		// TODO Auto-generated method stub
-		return null;
+		TypedQuery<SalesLeadProfile> query= (TypedQuery<SalesLeadProfile>)
+				entityManager.createQuery(
+				"SELECT p FROM SalesLeadProfile p where p.industry= :industry").
+				setParameter("industry", industry);
+		List<SalesLeadProfile> result = query.getResultList();
+		return result;
 	}
 
 }
