@@ -14,7 +14,7 @@
 			
 					<a class="navbar-brand navbar-right">O&B Lead Manager</a>
 					<div class="navbar-header">
-						<a class="navbar-brand" href="lead_profile.html"><span class="glyphicon glyphicon-chevron-left"></span></a>
+						<a class="navbar-brand" href="lead_profile.jsp"><span class="glyphicon glyphicon-chevron-left"></span></a>
 						<a class="navbar-brand">Martin Dee's Contact</a>
 					</div>
 				</div>

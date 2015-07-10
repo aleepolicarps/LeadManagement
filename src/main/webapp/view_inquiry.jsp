@@ -7,11 +7,7 @@
 		<title>Inquiry</title>
 	</head>
 	
-	<body>
-
-
-		 
-		  
+	<body>	  
 	
 		<div class="container-fluid">
 			<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
@@ -19,19 +15,19 @@
 			
 					<a class="navbar-brand navbar-right">O&B Lead Manager</a>
 					<div class="navbar-header">
-						<a class="navbar-brand" href="lead_profile.html"><span class="glyphicon glyphicon-chevron-left"></span></a>
+						<a class="navbar-brand" href="lead_profile.jsp"><span class="glyphicon glyphicon-chevron-left"></span></a>
 						<a class="navbar-brand">Martin Dee's Inquiry</a>
 					</div>
 				</div>
 			</nav>
-		 <!-- Trigger the modal with a button -->
+		
 			  <button type="button" class="btn btn-info btn-lg add" data-toggle="modal" data-target="#myModal">Add Activity</button>
 
-			  <!-- Modal -->
+			 
 			  <div class="modal fade" id="myModal" role="dialog">
 			    <div class="modal-dialog">
 			    
-			      <!-- Modal content-->
+			      
 			      <div class="modal-content">
 				<div class="modal-header">
 				  <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -42,10 +38,11 @@
 
 				</div>
 				<div class="modal-footer">
-				  <button type="button" class="btn btn-default finish" data-dismiss="modal">Submit</button>
-				</div>
-			      </div>
-			      
+					<button type="button" class="btn btn-default finish" data-dismiss="modal">Submit</button>
+					<input class="chooseFile" type="file" name="..."></span>
+					<span class="fileinput-filename"></span>
+				</div>	
+			      </div>  
 			    </div>
 			  </div>
 			<div id="container">	
@@ -87,6 +84,7 @@
 		<script src="resources/js/jquery/jquery-1.11.3.min.js"></script>
 		<script	src="resources/js/bootstrap/bootstrap.min.js"></script>
 		<script	src="resources/js/customjs/create_profile.js"></script>
+		<script	src="resources/js/customjs/view_inquiry.js"></script>
 		
 	</body>
-</html>
+</html><a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>

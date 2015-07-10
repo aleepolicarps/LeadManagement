@@ -1,0 +1,8 @@
+#container{
+	float:left;
+	height:100%;
+	width:80%;
+	padding-left:3%;
+	padding-top: 5%;
+	z-index:-1;
+}

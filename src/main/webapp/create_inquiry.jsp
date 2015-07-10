@@ -21,7 +21,7 @@
 			<div id="container" class="center_div">
 				<fieldset>
 				<legend>Inquiry Details</legend>
-				<form action="index.html" role="form">
+				<form action="index.jsp" role="form">
 				  <div class="form-group">
 				     <input type="text" class="form-control" id="name" placeholder="* Inquiry Name">
 				  </div>	  			  
