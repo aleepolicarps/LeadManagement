@@ -15,12 +15,11 @@ import org.springframework.stereotype.Repository;
 
 import onb.leadmanagement.domain.Industry;
 import onb.leadmanagement.domain.SalesLeadProfile;
-import onb.leadmanagement.dto.SalesLeadDTO;
-import onb.leadmanagement.jpainterfaces.SalesLeadJpaRepository;
+import onb.leadmanagement.jpainterfaces.SalesLeadRepository;
 
 
 @Repository
-public class SalesLeadJpaImpl implements SalesLeadJpaRepository{
+public class SalesLeadJpaImpl implements SalesLeadRepository{
 	
 	@PersistenceUnit
 	private EntityManagerFactory entityManagerFactory;
@@ -34,13 +33,14 @@ public class SalesLeadJpaImpl implements SalesLeadJpaRepository{
 	
 	@PreDestroy
 	public void tearDown(){
+		entityManager.flush();
+		entityManager.clear();
 		entityManager.close();
-
 	}
 
 	@Override
-	public void createProfile(SalesLeadDTO salesLeadDto) {
-		//TODO define DTO
+	public void insert(SalesLeadProfile salesLead) {
+		//entityManager.persist(salesLead);
 	}
 
 	@Override
@@ -61,6 +61,12 @@ public class SalesLeadJpaImpl implements SalesLeadJpaRepository{
 				setParameter("industry", industry);
 		List<SalesLeadProfile> result = query.getResultList();
 		return result;
+	}
+
+	@Override
+	public void update(SalesLeadProfile salesLead) {
+		//entityManager.merge(salesLead);
+		
 	}
 
 }

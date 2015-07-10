@@ -19,7 +19,7 @@ import onb.leadmanagement.domain.Industry;
 import onb.leadmanagement.domain.Person;
 import onb.leadmanagement.domain.Project;
 import onb.leadmanagement.domain.SalesLeadProfile;
-import onb.leadmanagement.jpainterfaces.SalesLeadJpaRepository;
+import onb.leadmanagement.jpainterfaces.SalesLeadRepository;
 
 import org.junit.After;
 import org.junit.Before;
@@ -42,7 +42,7 @@ public abstract class AbstractRepositoryTest{
 	protected EntityManagerFactory entityManagerFactory;
 	protected EntityManager entityManager;
 	
-	SalesLeadJpaRepository leadRepository;
+	SalesLeadRepository leadRepository;
 	
 	@Before
 	public void setUp(){
