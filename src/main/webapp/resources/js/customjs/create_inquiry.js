@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 	
-	var projectChangeToConsultationDetails = function(){
-		$(".project-info").empty();
+	var inquiryChangeToConsultationDetails = function(){
+		$(".inquiry-info").empty();
 		var addHtml = " <div class='form-group'> " +
 				"<input type='number' class='form-control' " +
 				"id='budget' placeholder='Budget'> </div>" +
@@ -12,11 +12,11 @@ $( document ).ready(function() {
 				"class='form-control' id='expenditure' " +
 				"placeholder='Expenditure Type'></div>";
 		
-		$(".project-info").append(addHtml);
+		$(".inquiry-info").append(addHtml);
 	}
 	
-	var projectChangeToTrainingDetails = function(){
-		$(".project-info").empty();
+	var inquiryChangeToTrainingDetails = function(){
+		$(".inquiry-info").empty();
 		var addHtml = " <div class='form-group'> " +
 		"<input type='text' class='form-control' " +
 		"id='topic' placeholder='Topic'> </div>" +
@@ -24,10 +24,15 @@ $( document ).ready(function() {
 		"class='form-control' id='budget' " +
 		"placeholder='Budget'></div>";
 
-		$(".project-info").append(addHtml);
+		$(".inquiry-info").append(addHtml);
+	}
+
+	var clearDetails = function(){
+		$(".inquiry-info").empty();	
 	}
 	
-	$("#projectconsult").click(projectChangeToConsultationDetails);
-	$("#projecttrain").click(projectChangeToTrainingDetails);
+	$("#inquiryconsult").click(inquiryChangeToConsultationDetails);
+	$("#inquirytrain").click(inquiryChangeToTrainingDetails);
+	$("#inquirynone").click(clearDetails);
 	
 });
