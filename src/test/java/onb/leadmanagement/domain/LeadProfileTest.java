@@ -13,8 +13,8 @@ import onb.leadmanagement.domain.CompanyLeadProfile;
 import onb.leadmanagement.domain.ConsultationProject;
 import onb.leadmanagement.domain.Contact;
 import onb.leadmanagement.domain.Industry;
-import onb.leadmanagement.domain.Person;
-import onb.leadmanagement.domain.Project;
+import onb.leadmanagement.domain.Person_Old;
+import onb.leadmanagement.domain.Project_Old;
 import onb.leadmanagement.domain.SalesLeadProfile;
 
 import org.junit.Test;
@@ -27,17 +27,17 @@ public class LeadProfileTest {
 				"bankXxx@gmail.com", new Address("123", "456", 
 						"StreetX", "BarangayX", "123", "Manila", "Philippines"));
 		
-		Person personXxx = new Person("FistnameX", "", "LastnameX", 
+		Person_Old personXxx = new Person_Old("FistnameX", "", "LastnameX", 
 				new Contact("1234567891","1234567","personXxx@gmail.com",
 						null));
 			
 		SalesLeadProfile leadXxx = new CompanyLeadProfile(
 				"Bank XXX", Channel.LANDLINE_CALL, contactXxx, Industry.BANKING_AND_FINANCE,
-				new HashSet<Project>(),new ArrayList<Communication>(), personXxx);
+				new HashSet<Project_Old>(),new ArrayList<Communication>(), personXxx);
 		
 		assertEquals(contactXxx.toString(), leadXxx.getContact().toString());
 		
-		Project consulationProjectXxx = new ConsultationProject("ProjectXxx");
+		Project_Old consulationProjectXxx = new ConsultationProject("ProjectXxx");
 		
 		Communication comm1 = new Communication(Calendar.JANUARY, 1, 2015,
 				"02:00", 0, null, "Initial contact",

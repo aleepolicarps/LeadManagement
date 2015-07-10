@@ -23,7 +23,7 @@ public class SalesLeadProfile {
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="salesLeadId", referencedColumnName="salesLeadId")
-	private Set<Project> projects;
+	private Set<Project_Old> projects;
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="salesLeadId", referencedColumnName="salesLeadId")
@@ -48,13 +48,13 @@ public class SalesLeadProfile {
 		this.initialChannelAccessed = Channel.NONE;
 		this.contact = new Contact();
 		this.industry = Industry.NONE;
-		projects = new HashSet<Project>();
+		projects = new HashSet<Project_Old>();
 		communicationLog = new ArrayList<Communication>();
 		this.comments = "";
 	}
 	
 	public SalesLeadProfile(String name, Channel channelAccessed, Contact contact,
-			Industry industry, Set<Project> projects, List<Communication> communicationLog){
+			Industry industry, Set<Project_Old> projects, List<Communication> communicationLog){
 		notEmpty(name);
 		notNull(channelAccessed);
 		notNull(contact);
@@ -65,7 +65,7 @@ public class SalesLeadProfile {
 		this.initialChannelAccessed = channelAccessed;
 		this.contact = contact;
 		this.industry = industry;
-		this.projects  = new HashSet<Project>(projects);
+		this.projects  = new HashSet<Project_Old>(projects);
 		this.communicationLog = new ArrayList<Communication>(communicationLog);
 		this.comments = "";
 	}
@@ -87,17 +87,17 @@ public class SalesLeadProfile {
 	public String getComments(){
 		return comments;
 	}
-	public void addProject(Project project){
+	public void addProject(Project_Old project){
 		projects.add(project);
 	}
-	public void mergeProjects(Set<Project> project){
+	public void mergeProjects(Set<Project_Old> project){
 		projects.addAll(project);
 	}
-	public void removeProject(Project project){
+	public void removeProject(Project_Old project){
 		projects.remove(project);
 	}
-	public Set<Project> getProjects(){
-		return new HashSet<Project>(projects);
+	public Set<Project_Old> getProjects(){
+		return new HashSet<Project_Old>(projects);
 	}	
 	public Contact getContact(){
 		return contact;

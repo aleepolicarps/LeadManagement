@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class ConsultationProject extends Project {
+public class ConsultationProject extends Project_Old {
 
 	private String technology;
 	private BigDecimal budget;

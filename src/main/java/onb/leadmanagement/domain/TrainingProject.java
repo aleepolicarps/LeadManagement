@@ -6,7 +6,7 @@ import static org.apache.commons.lang.Validate.notNull;
 import static org.apache.commons.lang.StringUtils.isEmpty;
 
 @Entity
-public class TrainingProject extends Project {
+public class TrainingProject extends Project_Old {
 	
 	private String course;
 	private int numberOfEnrollees;

@@ -5,7 +5,7 @@ import static org.apache.commons.lang.StringUtils.*;
 
 import javax.persistence.*;
 @Entity
-public class Person {
+public class Person_Old {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,11 +24,11 @@ public class Person {
 	@JoinColumn(name="contactId")
 	private Contact contact;
 	
-	protected Person(){
+	protected Person_Old(){
 		//for jpa
 	}
 	
-	public Person(String firstName, String middleInitial, String lastName,
+	public Person_Old(String firstName, String middleInitial, String lastName,
 			Contact contact) {
 		
 		notEmpty(firstName);
@@ -74,7 +74,7 @@ public class Person {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Person other = (Person) obj;
+		Person_Old other = (Person_Old) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

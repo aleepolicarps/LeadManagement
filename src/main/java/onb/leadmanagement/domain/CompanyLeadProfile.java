@@ -12,15 +12,15 @@ public class CompanyLeadProfile extends SalesLeadProfile {
 	
 	@OneToOne(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="personId")
-	private Person contactPerson;
+	private Person_Old contactPerson;
 	
 	protected CompanyLeadProfile() {
 		super();
 		//for jpa
 	}
 	public CompanyLeadProfile(String name, Channel channelAccessed,
-			Contact contact, Industry industry, Set<Project> projects,
-			ArrayList<Communication> communicationLog, Person contactPerson) {
+			Contact contact, Industry industry, Set<Project_Old> projects,
+			ArrayList<Communication> communicationLog, Person_Old contactPerson) {
 		super(name, channelAccessed, contact, industry, projects, communicationLog);
 		notNull(contactPerson);
 		this.contactPerson = contactPerson;
@@ -29,7 +29,7 @@ public class CompanyLeadProfile extends SalesLeadProfile {
 		super(name);
 		this.contactPerson = null;
 	}
-	public Person getContactPerson(){
+	public Person_Old getContactPerson(){
 		return contactPerson;
 	}
 }

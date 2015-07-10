@@ -7,7 +7,7 @@ import javax.persistence.*;
 import static org.apache.commons.lang.Validate.*;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Project {
+public class Project_Old {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,18 +22,18 @@ public class Project {
 	
 	private String detail;
 	
-	protected Project(){
+	protected Project_Old(){
 		
 	}
 	
-	public Project(String name){
+	public Project_Old(String name){
 		notEmpty(name);
 		this.name = name;
 		this.status = Status.for_evaluation;
 		this.detail = "";
 	}
 	
-	public Project(String name, Status status,String detail) {
+	public Project_Old(String name, Status status,String detail) {
 		notNull(name);
 		notNull(status);
 		notNull(detail);
@@ -73,7 +73,7 @@ public class Project {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Project other = (Project) obj;
+		Project_Old other = (Project_Old) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
