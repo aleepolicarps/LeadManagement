@@ -13,8 +13,6 @@ public interface SalesLeadJpaRepository {
 	
 	public SalesLeadProfile findByName(String name);
 	
-	public Collection<SalesLeadProfile> findByExpenditure(ExpenditureType expenditure);
-	
 	public Collection<SalesLeadProfile> findByIndustry(Industry industry);
 	
 }
