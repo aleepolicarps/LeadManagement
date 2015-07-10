@@ -7,7 +7,6 @@ import java.util.HashSet;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
-import javax.persistence.Query;
 
 import onb.leadmanagement.domain.Address;
 import onb.leadmanagement.domain.Channel;
@@ -21,10 +20,7 @@ import onb.leadmanagement.domain.Project;
 import onb.leadmanagement.domain.SalesLeadProfile;
 import onb.leadmanagement.jpainterfaces.SalesLeadRepository;
 
-import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.annotation.DirtiesContext;
@@ -56,10 +52,6 @@ public abstract class AbstractRepositoryTest{
 		}finally{
 			entityManager.close();
 		}
-	}
-	@After
-	public void tearDown(){
-//		entityManager.close();
 	}
 	
 	private void setUpLeads() {

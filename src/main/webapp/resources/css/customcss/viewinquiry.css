@@ -1,0 +1,26 @@
+#container{
+	margin-top:5%;
+	height:100%;
+	width:95%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.add {
+	float: right;
+	margin-top: 100px;
+	margin-right:40px;
+
+}
+
+.btn-info {
+  color: #F4F5FA;
+  background-color: #A9AAAE;
+  border-color: #A9AAAE;
+
+}
+
+.add: hover {
+	background-color: #A9AAAE;
+}
+

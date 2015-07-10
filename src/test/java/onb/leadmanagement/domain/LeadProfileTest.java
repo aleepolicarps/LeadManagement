@@ -6,6 +6,17 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
 
+import onb.leadmanagement.domain.Address;
+import onb.leadmanagement.domain.Channel;
+import onb.leadmanagement.domain.Communication;
+import onb.leadmanagement.domain.CompanyLeadProfile;
+import onb.leadmanagement.domain.ConsultationProject;
+import onb.leadmanagement.domain.Contact;
+import onb.leadmanagement.domain.Industry;
+import onb.leadmanagement.domain.Person;
+import onb.leadmanagement.domain.Project;
+import onb.leadmanagement.domain.SalesLeadProfile;
+
 import org.junit.Test;
 
 public class LeadProfileTest {

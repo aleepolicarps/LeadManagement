@@ -1,21 +1,10 @@
 package onb.leadmanagement.jpa;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-import onb.leadmanagement.domain.Address;
-import onb.leadmanagement.domain.Channel;
-import onb.leadmanagement.domain.Communication;
-import onb.leadmanagement.domain.CompanyLeadProfile;
-import onb.leadmanagement.domain.ConsultationProject;
-import onb.leadmanagement.domain.Contact;
 import onb.leadmanagement.domain.Industry;
-import onb.leadmanagement.domain.Person;
-import onb.leadmanagement.domain.Project;
 import onb.leadmanagement.domain.SalesLeadProfile;
 
 import org.junit.Test;
@@ -25,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("GenerateSchemaTests-context.xml")
-public class TestData extends AbstractRepositoryTest{
+public class RepositoryTest extends AbstractRepositoryTest{
 	@Test
 	public void testFindByName(){
 		String name = "Bank XXX";

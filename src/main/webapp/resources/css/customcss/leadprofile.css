@@ -1,31 +1,14 @@
-#sidebar-left{
-	height:100%;
-	padding:0;
-	
-	background-color: #e0e0e0;
-}
-
-.side-group{
-	padding-top: 30%;
-}
-
-#profile-name{
-	padding-top:4%;
-	padding-left:2%;
-	padding-bottom:1%;
-	height: 20%;
-	position:relative;
-	z-index: -1;
-}
-
 #container{
-	position:relative;
-	margin-left:16.7%;
+	float:left;
 	height:100%;
+	width:80%;
+	padding-left:2%;
+	padding-top: 4%;
 }
 
-#tablist{
-	position:relative;
-	padding-top:1%;
-	padding-left: 1%;
+.tab-workspace{
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:20px;
+	width:50%;
 }

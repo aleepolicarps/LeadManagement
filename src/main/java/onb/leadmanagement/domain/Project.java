@@ -5,7 +5,6 @@ import java.util.*;
 import javax.persistence.*;
 
 import static org.apache.commons.lang.Validate.*;
-
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Project {

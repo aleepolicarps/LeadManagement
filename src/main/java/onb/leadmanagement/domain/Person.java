@@ -4,7 +4,6 @@ import static org.apache.commons.lang.Validate.*;
 import static org.apache.commons.lang.StringUtils.*;
 
 import javax.persistence.*;
-
 @Entity
 public class Person {
 	
